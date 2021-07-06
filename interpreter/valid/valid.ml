@@ -431,7 +431,7 @@ let rec check_instr (c : context) (e : instr) (s : infer_stack_type) : op_type =
   | Rethrow x ->
     let (kind, _) = label c x in
     require (kind = CatchLabel) e.at "invalid rethrow label";
-    [] --> []
+    [] -->... []
 
 and check_seq (c : context) (s : infer_stack_type) (es : instr list)
   : infer_stack_type =
